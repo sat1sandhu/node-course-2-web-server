@@ -84,6 +84,13 @@ app.get('/bad', (req,res) => {
     });
 });
 
+
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs', {
+        title: 'Projects Page'
+    });
+});
+
 /// app.listen is going to bind the application to a port on our machine
 /// use port 3000 for our local machine
 //app.listen(3000, () => {
