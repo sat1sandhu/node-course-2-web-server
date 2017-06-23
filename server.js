@@ -2,6 +2,9 @@ const express = require('express');
 const hbs     = require('hbs');
 const fs      = require('fs');
 
+/// This is to configure our App to run on Heroku and also localhosts
+const port = process.env.PORT || 3000;
+
 /// Make a new express app
 var app = express();
 
@@ -83,6 +86,7 @@ app.get('/bad', (req,res) => {
 
 /// app.listen is going to bind the application to a port on our machine
 /// use port 3000 for our local machine
-app.listen(3000, () => {
-    console.log('Server is up and running');
+//app.listen(3000, () => {
+app.listen(port, () => {
+    console.log(`Server is up and running on port ${port}`);
 });
